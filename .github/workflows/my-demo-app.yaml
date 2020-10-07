@@ -16,3 +16,11 @@ jobs:
             - name: Test
               run: |
                 CGO_ENABLED=0 go test -v ./...
+
+            - name: Build and push Docker image
+              uses: docker/build-push-action@v1.1.0
+              with:
+                username: ${{ secrets.DOCKER_USERNAME }}
+                password: ${{ secrets.DOCKER_PASSWORD }}
+                repository: ${{ secrets.DOCKER_USERNAME }}/my-demo-app
+                tags: ${{ github.sha }}, latest
