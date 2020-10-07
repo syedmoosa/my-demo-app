@@ -10,5 +10,5 @@ import (
 func TestMain(t *testing.T) {
 	assert := assert.New(t)
 	a := 1
-	assert.Equal(a, 1)
+	assert.Equal(a, 2)
 }
