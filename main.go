@@ -12,6 +12,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", handler)
-	fmt.Println("Starting Server, Listening on port: 9001")
-	log.Fatal(http.ListenAndServe(":9001", nil))
+	fmt.Println("Starting Server, Listening on port: 8080")
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
