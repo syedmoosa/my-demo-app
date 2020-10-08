@@ -50,7 +50,8 @@ jobs:
              cd demo-kube-manifest/backend/base
              kustomize edit set image my-demo-project=${{ secrets.DOCKER_USERNAME }}/my-demo-app:$GITHUB_SHA
              cd ../overlays/development
-             kustomize build .  > k8s/manifest.yaml
+             pwd
+             kustomize build .  > ./k8s/manifest.yaml
              cat k8s/manifest.yaml
              cd ../../..
              pwd
