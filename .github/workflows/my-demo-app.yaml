@@ -54,8 +54,8 @@ jobs:
              kustomize build ./development  > ./development/k8s/manifest.yaml
              status=$?
              echo "ls command exit stats - $status"
-             cat k8s/manifest.yaml
-             cd ../../..
+             cat development/k8s/manifest.yaml
+             cd ../..
              pwd
              git config user.email "bsyed6@github.com"
              git config user.name "syedmoosa"
