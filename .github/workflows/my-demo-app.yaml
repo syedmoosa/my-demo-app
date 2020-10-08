@@ -51,14 +51,15 @@ jobs:
              kustomize edit set image my-demo-project=${{ secrets.DOCKER_USERNAME }}/my-demo-app:$GITHUB_SHA
              cd ..
              pwd
-             kustomize build ./development  > ./development/k8s/k8s-manifest.yaml
+             kustomize build .  > ./k8s/k8s-manifest.yaml
              status=$?
              echo "Building k8s manifest - $status"
-             cat development/k8s/k8s-manifest.yaml
+             cat k8s/k8s-manifest.yaml
              cd ../..
              pwd
              git config user.email "bsyed6@github.com"
              git config user.name "syedmoosa"
+             git status
              git add .
              git commit -am "update kubernetes manifest"
              git push
