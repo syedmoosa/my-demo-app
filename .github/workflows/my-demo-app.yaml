@@ -49,14 +49,14 @@ jobs:
           run: |
              cd demo-kube-manifest/backend/base
              kustomize edit set image my-demo-project=${{ secrets.DOCKER_USERNAME }}/my-demo-app:$GITHUB_SHA
-             cat kustomization.yaml
+             cd demo-kube-manifest/backend/overlays/development
+             kustomize build .  > k8s/manifest.yaml
+             cat k8s/manifest.yaml
         
         - name: Commit files
           run: |
-            pwd
-            ls
             cd demo-kube-manifest
             git config user.email "bsyed6@github.com"
             git config user.name "syedmoosa"
-            git commit -am "update docker tag"
+            git commit -am "update kubernetes manifest"
             git push
