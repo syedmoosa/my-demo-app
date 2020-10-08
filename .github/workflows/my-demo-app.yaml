@@ -58,5 +58,6 @@ jobs:
             cd demo-kube-manifest
             git config user.email "bsyed6@github.com"
             git config user.name "syedmoosa"
+            git add .
             git commit -am "update kubernetes manifest"
             git push
