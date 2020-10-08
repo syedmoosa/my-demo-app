@@ -53,8 +53,8 @@ jobs:
         
         - name: Commit files
           run: |
-            git config --local user.email "bsyed6@github.com"
-            git config --local user.name "syedmoosa"
+            git config user.email "bsyed6@github.com"
+            git config user.name "syedmoosa"
             git commit -am "update docker tag"
         
         - name: Push changes
