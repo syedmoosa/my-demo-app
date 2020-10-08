@@ -56,6 +56,8 @@ jobs:
              pwd
              git config user.email "bsyed6@github.com"
              git config user.name "syedmoosa"
+             git status
              git add .
+             git status
              git commit -am "update kubernetes manifest"
              git push
