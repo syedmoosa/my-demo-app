@@ -53,8 +53,11 @@ jobs:
         
         - name: Commit files
           run: |
+            pwd
+            ls
             cd ..
             pwd
+            ls
             git config user.email "bsyed6@github.com"
             git config user.name "syedmoosa"
             git commit -am "update docker tag"
