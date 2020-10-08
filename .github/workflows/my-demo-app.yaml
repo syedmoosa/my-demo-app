@@ -33,6 +33,9 @@ jobs:
         steps:
         - name: Check out code
           uses: actions/checkout@v2
+          with:
+            repository: syedmoosa/demo-kube-manifest
+            path: demo-kube-manifest
         
         - name: Setup Kustomize
           uses: imranismail/setup-kustomize@v1
