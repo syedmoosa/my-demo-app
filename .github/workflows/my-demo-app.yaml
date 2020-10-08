@@ -59,9 +59,4 @@ jobs:
             git config user.email "bsyed6@github.com"
             git config user.name "syedmoosa"
             git commit -am "update docker tag"
-        
-        - name: Push changes
-          uses: ad-m/github-push-action@master
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-              
+            git push
