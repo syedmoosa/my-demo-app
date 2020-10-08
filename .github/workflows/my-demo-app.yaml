@@ -49,9 +49,11 @@ jobs:
           run: |
              cd demo-kube-manifest/backend/base
              kustomize edit set image my-demo-project=${{ secrets.DOCKER_USERNAME }}/my-demo-app:$GITHUB_SHA
-             cd ../overlays/development
+             cd ../overlays
              pwd
-             kustomize build .  > ./k8s/manifest.yaml
+             kustomize build ./development  > ./development/k8s/manifest.yaml
+             status=$?
+             echo "ls command exit stats - $status"
              cat k8s/manifest.yaml
              cd ../../..
              pwd
