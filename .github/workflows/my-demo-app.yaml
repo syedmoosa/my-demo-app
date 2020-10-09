@@ -53,6 +53,10 @@ jobs:
         
         - name: Commit files
           run: |  
+             pwd
+             ls
+             cd my-demo-app
+             ls
              git config user.email "bsyed6@github.com"
              git config user.name "syedmoosa"
              git commit -am "update kubernetes manifest"
