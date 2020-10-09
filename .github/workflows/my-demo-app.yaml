@@ -47,7 +47,7 @@ jobs:
           env:
             DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           run: |
-             cd demo-kube-manifest/backend/overlay/dev
+             cd demo-kube-manifest/backend/overlays/dev
              kustomize edit set image my-demo-project=${{ secrets.DOCKER_USERNAME }}/my-demo-app:$GITHUB_SHA
              cat kustomization.yaml
         
